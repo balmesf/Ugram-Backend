@@ -76,7 +76,7 @@ exports.postLike = (req, res) => {
 	    cloudWatchLogs.LogMongoError(err);
 	    res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({message: err});
 	}
-	cloudWatchLogs.LogSuccessfullPost(TYPE_COMMENT);
+	cloudWatchLogs.LogSuccessfullPost(TYPE_LIKE);
         res.status(HttpStatus.CREATED).send(doc);
     });
 }
@@ -87,7 +87,7 @@ exports.deleteLike = (req, res) => {
             cloudWatchLogs.LogMongoError(err);
     	    res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({message: err});
 	}
-    	cloudWatchLogs.LogSuccessfullDelete(TYPE_COMMENT);
+    	cloudWatchLogs.LogSuccessfullDelete(TYPE_LIKE);
     	res.status(HttpStatus.ACCEPTED).send(doc);
     });
 }
